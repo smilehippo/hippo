@@ -33,14 +33,6 @@
 
 </style>
 <script>
-
-    import {
-      Select,
-      Button,
-      Input
-      // ...
-    } from 'element-ui'
-
     export default{
         data(){
             return{

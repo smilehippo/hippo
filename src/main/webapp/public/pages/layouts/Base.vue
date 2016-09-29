@@ -1,11 +1,11 @@
 <template>
     <div class="main" >
         <div class="top-bar">
-            <div>Top Bar</div>
+            <top-bar></top-bar>
         </div>
         <div class="content">
             <div class="left-bar ng-cloak sidebar-container collapsible-sidebar">
-                <div>Left Bar</div>
+                <left-bar></left-bar>
         </div>
         <div class="right-bar ng-cloak" >
             <div>
@@ -20,6 +20,9 @@
 
 </style>
 <script>
+    import LeftBar from './LeftBar.vue';
+    import TopBar from './TopBar.vue';
+
     var vuename = window.vuewname || 'auth/SignIn.vue';
 
     export default{
@@ -29,7 +32,8 @@
             }
         },
         components:{
-            'content-component': require('../'+ vuename)
+            'content-component': require('../'+ vuename),
+            LeftBar, TopBar
         }
 
     }

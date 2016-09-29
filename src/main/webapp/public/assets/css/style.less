@@ -1,3 +1,304 @@
-body{
-  background-color: #cccccc;
+@charset "UTF-8";
+html{
+  height: 100%;
 }
+
+body{
+  height: 100%;
+  margin: 0;
+}
+
+h4, h5, h6,
+h1, h2, h3 {margin-top: 0;}
+ul, ol, li {margin: 0; padding:0}
+p {margin: 0;}
+html,body{  font-family: 'Open Sans', sans-serif;  }
+input[type="radio"], input[type="checkbox"] {
+  outline:0 !important;
+}
+a{
+  transition:0.5s all;
+  //-webkit-transition:0.5s all;
+  //-moz-transition:0.5s all;
+  //-o-transition:0.5s all;
+  //-ms-transition:0.5s all;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+a:hover, a:focus {outline: none;}
+
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.break{
+  display: block;
+  clear: both;
+}
+
+/* common form dom style */
+.invalid{ color: #A11D20; font-size: 14px; font-style: normal; padding-left: 0px;}
+
+/**
+bootstrap override
+**/
+.table > tbody > tr > td, .table > tfoot > tr > td{
+  vertical-align: middle;
+  padding: 4px;
+}
+
+.tooltip-inner{text-align: left; font-family:'Segoe UI', 'Helvetica Neue', Arial, Helvetica, Sans Serif; border-radius:3px}
+.tooltip.in{opacity: 0.99;}
+
+.modal .progress{margin-bottom: 0px;}
+
+/***
+app setting
+**/
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.pagination-total{
+  margin: 20px 50px 20px 0;
+  line-height: 20px;
+  vertical-align: middle;
+
+  ul li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+
+.st-sort-ascent:before{
+  content: '\25B2';
+}
+
+.st-sort-descent:before{
+  content: '\25BC';
+}
+
+
+.main{
+  height: 100%;
+}
+
+.main .top-bar{
+  height: 60px;
+  //border-bottom: 2px solid #87ceeb;
+  background-color: #6f5499;
+  color: #fff;
+
+  .logo {
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    float: left;
+    margin-left: 20px ;
+  }
+
+  .auth {
+    height: 60px;
+    padding: 30px 20px 5px 0;
+    float: right;
+
+    a{
+      color: #fff;
+      margin-left: 30px;
+
+      &:hover{opacity: 0.7;}
+    }
+  }
+
+}
+
+.main .content{
+  clear: both; content: ""; display: table; width: 100%;
+}
+
+.main .left-bar{
+  display: table-cell;
+  vertical-align: top;
+  width: 160px;
+  min-width: 160px;
+  border-right: 2px solid #6f5499;
+  min-height: 1200px;
+  padding: 5px;
+
+  ul.menus{
+    list-style: none;
+    > li{
+      display: block;
+      position: relative;
+      padding: 2px;
+
+      a{
+        display: block;
+        border-radius: 4px;
+        padding: 8px 8px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #eee;
+        }
+
+        &.active {
+          color: #fff;
+          background-color: #337ab7;
+        }
+      }
+    }
+  }
+}
+
+
+.main .right-bar{
+  display: table-cell;
+  vertical-align: top;
+  padding: 5px 5px 5px 5px;
+  //height: 100%;
+
+  //select{height:35px; line-height: 30px !important; min-width:70px; padding:2px; margin: 0px; font-size: 14px;  }
+
+  > div{min-height: 1000px;}
+
+}
+
+.nomenu .left-bar{
+  display: none;
+}
+
+.nomenu .right-bar{
+  padding-left: 5px;
+}
+
+.config-list {
+  .navbar {
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .newline {
+    background-color: rgba(193,226,179,0.2);
+  }
+
+  .color-highlight {
+    color: #2e6da4;
+    font-weight: normal;
+  }
+
+  .color-desc {
+    color: #999999;
+  }
+
+  .report-grid {
+    font-size: 12px;
+  }
+}
+
+
+
+.sc-panel{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px;
+  min-height: 80px;
+  background-color: rgba(193, 226, 179, 0.2); /* #d9edf7;*/
+  margin-bottom: 5px;
+
+  .filter-panel{
+    min-height: 70px;
+    //clear: right;
+    //overflow: hidden; // ������ֱ����overflow:hidden�����,����������,���ڿؼ��������
+  }
+
+  dl {
+    float: left;
+    width: 145px;
+    padding-right: 5px;
+    margin-right: 2px;
+    margin-bottom: 5px ;
+    height: 60px;
+    //height: 60px;
+
+    &.short {
+      width: 100px;
+    }
+
+    dt {
+      padding: 2px 0 2px 2px;
+      color: #666;
+      font-size: 12px;
+      min-height: 20px;
+    }
+
+    dd {  }
+  }
+
+  ul {
+    list-style: none;
+    > li {
+      display: inline-block;
+      padding: 2px 6px 2px 2px;
+    }
+  }
+}
+
+.data-panel{
+  overflow-x: scroll;
+
+  table{
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.login{
+  width: 750px;
+  margin: 20px auto 0 auto;
+
+  .logo{
+    float: left; width: 360px; height: 420px; background-image: url("../img/auth/rpt-sys-logo.png");
+    margin-right: 50px;
+  }
+
+  .action-panel{
+    float:left;
+    width: 300px;
+    margin-top: 90px;
+  }
+
+  h2{color: #6f5499;}
+
+  .login-content{
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+
+  .error-info{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 13px;
+
+    span {
+      padding: 2px;
+      display: block;
+    }
+  }
+}
+
+// just a test - v4
