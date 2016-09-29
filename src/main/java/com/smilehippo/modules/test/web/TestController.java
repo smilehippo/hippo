@@ -7,14 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smilehippo.common.web.BaseController;
+import com.smilehippo.modules.hippo.utils.ResponseUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.smilehippo.common.persistence.Page;
@@ -126,4 +125,28 @@ public class TestController extends BaseController {
 		return "true";
 	}
 
+
+	/**
+	 * 删除数据方法
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+//	@RequiresPermissions("test:test:edit")
+	@RequestMapping(value = "hippo/login", method = RequestMethod.GET)
+//	@ResponseBody
+	public String hippo(HttpServletRequest request, HttpServletResponse response) {
+//		testService.delete(test);
+//		addMessage(redirectAttributes, "删除测试成功");
+//		return "redirect:" + adminPath + "/test/test/?repage";
+		return "hippo/modules/auth/login";
+	}
+
+	//	@RequiresPermissions("test:test:edit")
+	@RequestMapping(value = "hippo/signin", method = RequestMethod.GET)
+//	@ResponseBody
+	public ModelAndView signin(HttpServletRequest request, HttpServletResponse response) {
+		return ResponseUtil.RenderTpl(request, "SignIn", "pages/auth/SignIn");
+//		return new ModelAndView("hippo/modules/auth/login");
+	}
 }
